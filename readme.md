@@ -34,3 +34,9 @@ npm install
 
 ## Remove Contacts:
 ![Remove Contacts](./images/rem_cont.png)
+
+# Links to screenshots:
+## https://ibb.co/JqRfQtT
+## https://ibb.co/HG2h85n
+## https://ibb.co/rxGCWB4
+## https://ibb.co/0jDz881
