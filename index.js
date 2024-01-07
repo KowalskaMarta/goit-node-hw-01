@@ -1,35 +1,25 @@
-// Utwórz import modułu contacts.js w pliku index.js i sprawdź wydajność funkcji dla pracy z kontaktami.
-
-const contacts = require("./contacts");
-
-const { Command } = require("commander");
+import { listContacts, getContactById, addContact, removeContact } from "./contacts.js";
+import { Command } from "commander";
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      const allImportedContacts = await contacts.listContacts();
+      const allImportedContacts = await listContacts();
       console.table(allImportedContacts);
       break;
 
     case "get":
-      // ... id
-      const oneContactsfromId = await contacts.getContactById(id);
+      const oneContactsfromId = await getContactById(id);
       console.table(oneContactsfromId);
       break;
 
     case "add":
-      // ... name email phone
-      const createNewContacts = await contacts.addContact({
-        name,
-        email,
-        phone,
-      });
+      const createNewContacts = await addContact(name, email, phone);
       console.table(createNewContacts);
       break;
 
     case "remove":
-      // ... id
-      const deleteContacts = await contacts.removeContact(id);
+      const deleteContacts = await removeContact(id);
       console.table(deleteContacts);
       break;
 
